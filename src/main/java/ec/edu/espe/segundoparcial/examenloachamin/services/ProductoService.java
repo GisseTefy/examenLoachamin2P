@@ -19,6 +19,19 @@ public class ProductoService {
         this.productoRepository = productoRepository;
     }
 
+    public List<Producto> listarProductosPorEmpresa(String rucEmpresa) {
+        return productoRepository.findByRucEmpresaOrderByDescripcion(rucEmpresa);
+    }
+
+    public Producto obtenerProducto(String idProducto) {
+        return productoRepository.findById(idProducto).orElse(null);
+    }
+
+    public List<Comentario> obtenerComentariosProducto(String codigoProducto) {
+        Producto producto = productoRepository.findByCodigoProducto(codigoProducto);
+        return producto != null ? producto.getComentarios() : Collections.emptyList();
+    }
+    
     @Transactional
     public void crearProducto(Producto producto) {
         producto.setId(UUID.randomUUID().toString());
