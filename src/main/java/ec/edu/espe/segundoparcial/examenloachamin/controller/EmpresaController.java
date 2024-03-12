@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import ec.edu.espe.segundoparcial.examenloachamin.domain.Empresa;
-import ec.edu.espe.segundoparcial.examenloachamin.services.EmpresaService;
 
 import lombok.extern.slf4j.Slf4j;
 
